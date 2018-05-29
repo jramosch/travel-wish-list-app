@@ -13,3 +13,9 @@ gem 'thin'
 gem 'rack-flash3'
 gem 'bcrypt'
 gem 'require_all'
+
+group :development do
+  gem 'shotgun'
+  gem 'pry'
+  gem 'tux'
+end
