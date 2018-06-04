@@ -14,7 +14,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    
+    if !params.any? { |k,v| v.empty? }
+      user = User.create(username: params[:username], email: params[:email], password: params[:password])
+    else
+      redirect to "/signup"
+    end
   end
 
   get '/login' do
