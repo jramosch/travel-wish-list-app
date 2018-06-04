@@ -3,6 +3,8 @@ class ApplicationController < Sinatra::Base
 
   configure do
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "my_app_secret"
   end
 
   get '/' do
