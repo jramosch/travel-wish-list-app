@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     if !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
       session[:user_id] = user.id
-      redirect to "/users/#{}"
+      redirect to "/users/#{user.slug}"
     else
       redirect to "/signup"
     end
