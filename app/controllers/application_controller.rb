@@ -12,13 +12,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/signup' do
-    erb :'users/signup'
+    if logged_in
+      redirect to "/users/#{user.slug}"
+    else
+      erb :'users/signup'
+    end
   end
 
   post '/signup' do
-    if logged_in
-      redirect to "/users/#{current_user.slug}"
-    elsif !params.any? { |k,v| v.empty? }
+    if !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
       user.wishlist = Wishlist.create(name: "#{user.username}'s Wishlist'")
       session[:user_id] = user.id
