@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180529062918) do
   end
 
   create_table "wishlists", force: :cascade do |t|
+    t.string  "name"
     t.integer "user_id"
   end
 

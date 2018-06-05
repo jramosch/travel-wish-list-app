@@ -20,8 +20,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
+    params.delete(:captures) if params.key?(:captures)
     if !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
+      binding.pry
       user.wishlist = Wishlist.create(name: "#{user.username}'s Wishlist'")
       session[:user_id] = user.id
       redirect to "/users/#{user.slug}"
