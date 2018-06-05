@@ -16,7 +16,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    if !params.any? { |k,v| v.empty? }
+    if logged_in
+      redirect to "/users/#{current_user.slug}"
+    elsif !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
       session[:user_id] = user.id
       redirect to "/users/#{user.slug}"
