@@ -20,6 +20,7 @@ class ApplicationController < Sinatra::Base
       redirect to "/users/#{current_user.slug}"
     elsif !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
+      user.wishlist = Wishlist.create(name: "#{user.username}'s Wishlist'")
       session[:user_id] = user.id
       redirect to "/users/#{user.slug}"
     else
