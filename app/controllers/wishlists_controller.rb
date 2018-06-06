@@ -7,6 +7,7 @@ class WishlistsController < ApplicationController
   post '/wishlists/:id' do
     wishlist = Wishlist.find(params[:id])
     wishlist.update(params["wishlist"])
+    binding.pry
     if !params["attraction"]["name"].empty?
       new_attraction = Attraction.create(name: params["attraction"]["name"])
       wishlist.attractions << new_attraction
