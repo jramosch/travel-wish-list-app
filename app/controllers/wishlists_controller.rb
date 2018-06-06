@@ -27,7 +27,7 @@ class WishlistsController < ApplicationController
       new_attraction = Attraction.create(name: params["attraction"]["name"], user_id: "#{current_user.id}")
       if !params["city"]["name"].empty?
         new_city = City.create(name: params["city"]["name"], user_id: "#{current_user.id}")
-        new_attraction[:city_id] = new_city.id
+        new_attraction.update(city_id: "#{new_city.id}")
       else
         new_attraction.update(city_id: params["attraction"]["city_id"])
       end
