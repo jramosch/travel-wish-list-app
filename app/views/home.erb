@@ -14,6 +14,13 @@
     <a href="/wishlists/<%= @user.wishlist.id %>/edit">Update Wishlist</a>
     <br></br>
     <h4>Attractions submitted by you:</h4>
+    <% @user.attractions.each do |attraction| %>
+      <p><%= attraction.name%></p>
+    <% end %>
     <br></br>
+    <h4>Cities submitted by you:</h4>
+    <% @user.cities.each do |city| %>
+      <p><%= city.name %></p>
+    <% end %>
   </body>
 </html>
