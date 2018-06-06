@@ -8,11 +8,11 @@ class WishlistsController < ApplicationController
     wishlist = Wishlist.find(params[:id])
     wishlist.update(params["wishlist"])
     if !params["attraction"]["name"].empty?
-      new_attraction = Attraction.create(name: params["attraction"]["name"])
-      wishlist.attractions << new_attraction
+      new_attraction = Attraction.create(params[:attraction])
       if !params["city"]["name"].empty?
         new_attraction.city = City.create(name: params["city"]["name"])
       end
+      wishlist.attractions << new_attraction
     end
     redirect to "/home"
   end
