@@ -2,9 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title><%= @wishlist.name %></title>
   </head>
   <body>
-
+    <h2><%= @wishlist.name %></h2>
+    <% @wishlist.attractions.each do |attraction| %>
+      <h4><%= attraction.name %></h4>
+      <p>City: <%=attraction.city.name %></p>
+      <p><%=attraction.description%></p>
+    <% end %>
   </body>
 </html>

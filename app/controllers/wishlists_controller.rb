@@ -5,6 +5,8 @@ class WishlistsController < ApplicationController
   end
 
   get '/wishlists/:id' do
+    @wishlist = Wishlist.find(params[:id])
+    binding.pry
     erb :'wishlists/show'
   end
 
