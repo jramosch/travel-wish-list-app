@@ -49,7 +49,7 @@ class ApplicationController < Sinatra::Base
 
   get '/login' do
     if logged_in
-      redirect to "/users/#{current_user.slug}"
+      redirect to "/home"
     else
       erb :'users/login'
     end
@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to "/users/#{user.slug}"
+      redirect to "/home"
     else
       redirect to "/login"
     end
