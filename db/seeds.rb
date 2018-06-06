@@ -5,6 +5,6 @@ user_list = [
 ]
 
 user_list.each do |username, email, password|
-  user = User.create(username: username, email:, email, password: password)
+  user = User.create(username: username, email: email, password: password)
   user.wishlist = Wishlist.create(name: "#{username}'s wishlist")
 end
