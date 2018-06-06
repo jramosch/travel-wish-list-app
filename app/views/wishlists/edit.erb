@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Update Your Wishlist:</h1>
-    <form class="" action="index.html" method="post">
+    <form action="/wishlists/<%= @wishlist.id %>" method="post">
       <label>Wishlist Name:</label><br>
       <input type="text" name="wishlist[name]" value="<%= @wishlist.name %>">
       <br></br>
