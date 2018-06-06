@@ -23,8 +23,9 @@ class ApplicationController < Sinatra::Base
     params.delete(:captures) if params.key?(:captures)
     if !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
-      user.wishlist = Wishlist.create(name: "#{user.username}'s Wishlist'")
-      
+      new_wishlist = Wishlist.create(name: "#{user.username}'s Wishlist")
+      user.wishlist = new_wishlist
+      new_wishlist[:user_id] = user.id
       binding.pry
       session[:user_id] = user.id
       redirect to "/users/#{user.slug}"
