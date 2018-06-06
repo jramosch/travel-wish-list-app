@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/home' do
+    @user = current_user
+    erb :home
+  end
+
   get '/signup' do
     if logged_in
       redirect to "/users/#{current_user.slug}"
