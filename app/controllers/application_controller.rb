@@ -36,6 +36,16 @@ class ApplicationController < Sinatra::Base
     erb :'users/login'
   end
 
+  post '/login' do
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect to "/users/#{user.slug}"
+    else
+      redirect to "/login"
+    end
+  end
+
   helpers do
     def current_user
       User.find(session[:user_id])
