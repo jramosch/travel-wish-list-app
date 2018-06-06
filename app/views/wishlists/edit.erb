@@ -11,7 +11,7 @@
       <input type="text" name="wishlist[name]" value="<%= @wishlist.name %>">
       <br></br>
       <% Attraction.all.each do |attraction| %>
-        <input type="checkbox" name="wishlist[attraction_ids]"
+        <input type="checkbox" name="wishlist[attraction_ids][]"
         value="<%=attraction.id%>" <%='checked' if @wishlist.attractions.include?(attraction)%>>
         <%=attraction.name%></input><br>
       <% end %>

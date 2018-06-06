@@ -25,6 +25,7 @@ class WishlistsController < ApplicationController
         new_attraction.update(city_id: params["attraction"]["city_id"])
       end
       wishlist.attractions << new_attraction
+      wishlist.save
     end
     redirect to "/home"
   end
