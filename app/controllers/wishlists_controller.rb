@@ -4,6 +4,10 @@ class WishlistsController < ApplicationController
     erb :'wishlists/index'
   end
 
+  get '/wishlists/:id' do
+    erb :'wishlists/show'
+  end
+
   get '/wishlists/:id/edit' do
     @wishlist = Wishlist.find(params[:id])
     if logged_in && current_user.id == @wishlist.user_id

@@ -11,6 +11,7 @@
       <p><%= attraction.name %></p>
     <% end %>
     <br>
+    <a href="/wishlists/<%= @user.wishlist.id %>">View Wishlist</a>
     <a href="/wishlists/<%= @user.wishlist.id %>/edit">Update Wishlist</a>
     <br></br>
     <h4>Attractions submitted by you:</h4>

@@ -18,6 +18,7 @@ class ApplicationController < Sinatra::Base
   get '/home' do
     if logged_in
       @user = current_user
+      binding.pry
       erb :home
     else
       redirect to "/"
