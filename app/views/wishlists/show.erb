@@ -8,8 +8,10 @@
     <h2><%= @wishlist.name %></h2>
     <% @wishlist.attractions.each do |attraction| %>
       <h4><%= attraction.name %></h4>
-      <p>City: <%=attraction.city.name %></p>
-      <p><%=attraction.description%></p>
+      <p>City: <%=attraction.city.name %><br>
+      <%=attraction.description%></p>
     <% end %>
+    <br>
+    <a href="/wishlists/<%= @wishlist.id %>/edit">Update Wishlist</a>
   </body>
 </html>
