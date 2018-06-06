@@ -7,7 +7,6 @@ class WishlistsController < ApplicationController
   post '/wishlists/:id' do
     wishlist = Wishlist.find(params[:id])
     wishlist.update(params["wishlist"])
-    binding.pry
     if !params["attraction"]["name"].empty?
       new_attraction = Attraction.create(name: params["attraction"]["name"])
       wishlist.attractions << new_attraction
@@ -15,6 +14,7 @@ class WishlistsController < ApplicationController
         new_attraction.city = City.create(name: params["city"]["name"])
       end
     end
+    redirect to "/home"
   end
 
   get '/wishlists/:id/edit' do

@@ -10,7 +10,7 @@
       <label>Wishlist Name:</label><br>
       <input type="text" name="wishlist[name]" value="<%= @wishlist.name %>">
       <br></br>
-      <% Attractions.all.each do |attraction| %>
+      <% Attraction.all.each do |attraction| %>
         <input type="checkbox" name="wishlist[attraction_ids]"
         value="<%=attraction.id%>" <%='checked' if @wishlist.attractions.include?(attraction)%>>
         <%=attraction.name%></input><br>
@@ -23,14 +23,14 @@
       <br></br>
       <label>If you can't find your city below, make a new one!</label>
       <br>
-      <% Cities.all.each do |city| %>
+      <% City.all.each do |city| %>
         <input type="radio" name="attraction[city_id]" value="<%= city.id %>">
         <%= city.name %></input>
       <% end %>
       <br></br>
       <input type="text" name="city[name]">
       <br></br>
-      <input type="subt" name="submit" value="Update Wishlist">
+      <input type="submit" name="submit" value="Update Wishlist">
     </form>
   </body>
 </html>
