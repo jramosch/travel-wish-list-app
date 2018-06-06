@@ -13,10 +13,14 @@
       <% Attractions.all.each do |attraction| %>
         <input type="checkbox" name="wishlist[attraction_ids]"
         value="<%=attraction.id%>" <%='checked' if @wishlist.attractions.include?(attraction)%>>
-        <%=attraction.name%></input>
+        <%=attraction.name%></input><br>
       <% end %>
       <br></br>
-      <label></label>
+      <label>and/or create a new attraction:</label><br>
+      <label>Attraction Name:</label>
+      <input type="text" name="attraction[name]"><br>
+      <label>Description:</label><input type="text" name="attraction[description]"><br>
+      
     </form>
   </body>
 </html>
