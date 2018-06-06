@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wishlist Index</title>
+  </head>
+  <body>
+    <h2>All Wishlists Submitted:</h2>
+    <% Wishlist.all.each do |wishlist| %>
+      <a href="/wishlists/<%=wishlist.id%>"><%=wishlist.name%></a><br>
+    <% end %>
+  </body>
+</html>
