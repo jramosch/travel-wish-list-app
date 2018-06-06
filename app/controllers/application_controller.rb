@@ -39,7 +39,6 @@ class ApplicationController < Sinatra::Base
       new_wishlist = Wishlist.create(name: "#{user.username}'s Wishlist")
       user.wishlist = new_wishlist
       new_wishlist[:user_id] = user.id
-      binding.pry
       session[:user_id] = user.id
       redirect to "/users/#{user.slug}"
     else
