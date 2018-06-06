@@ -18,14 +18,13 @@ class WishlistsController < ApplicationController
     wishlist.update(params["wishlist"])
     binding.pry
     if !params["attraction"]["name"].empty?
-      new_attraction = Attraction.create(name: params["attraction"]["name"])
+      new_attraction = Attraction.create(name: params["attraction"]["name"], user_id: "#{current_user.id}")
       if !params["city"]["name"].empty?
-        new_attraction.city = City.create(name: params["city"]["name"])
+        new_attraction.city = City.create(name: params["city"]["name"], user_id: "#{current_user.id}")
       else
         new_attraction.update(city_id: params["attraction"]["city_id"])
       end
       wishlist.attractions << new_attraction
-      wishlist.save
     end
     redirect to "/home"
   end
