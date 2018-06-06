@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
   get '/signup' do
     if logged_in
-      redirect to "/users/#{user.slug}"
+      redirect to "/users/#{current_user.slug}"
     else
       erb :'users/signup'
     end
@@ -23,8 +23,9 @@ class ApplicationController < Sinatra::Base
     params.delete(:captures) if params.key?(:captures)
     if !params.any? { |k,v| v.empty? }
       user = User.create(username: params[:username], email: params[:email], password: params[:password])
-      binding.pry
       user.wishlist = Wishlist.create(name: "#{user.username}'s Wishlist'")
+      
+      binding.pry
       session[:user_id] = user.id
       redirect to "/users/#{user.slug}"
     else
@@ -44,6 +45,10 @@ class ApplicationController < Sinatra::Base
     else
       redirect to "/login"
     end
+  end
+
+  get '/logout' do
+    session.clear
   end
 
   helpers do
