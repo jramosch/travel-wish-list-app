@@ -22,6 +22,10 @@ parthenon = Attraction.create(name: "Parthenon",
 acropolis = Attraction.create(name: "Acropolis of Athens",
   description: "Ruins of iconic 5th-century B.C. temple complex on Athens' rocky hilltop undergoing restoration.")
 
+rome.attractions << colosseum
+athens.attractions << parthenon
+athens.attractions << acropolis
+
 attractions_by_kratos = [colosseum, parthenon, acropolis]
 
 attractions_by_kratos.each do |attraction|
@@ -42,6 +46,9 @@ london_eye = Attraction.create(name: "London Eye",
   description: "Huge observation wheel giving passengers a privileged bird's-eye view of the city's landmarks.")
 louvre = Attraction.create(name: "The Louvre",
   description: "he Louvre Palace is a former royal palace located on the Right Bank of the Seine in Paris, between the Tuileries Gardens and the church of Saint-Germain l'Auxerrois.")
+
+london.attractions << london_eye
+paris.attractions << louvre
 
 attractions_by_atreus = [london_eye, louvre]
 
