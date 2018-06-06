@@ -12,6 +12,14 @@
     <% end %>
     <br>
     <br></br>
-    <h4>Attractions submitted by <%=@user.username%></h4>
+    <h4>Attractions submitted by <%=@user.username%>:</h4>
+    <% @user.attractions.each do |attraction| %>
+      <p><%= attraction.name%></p>
+    <% end %>
+    <br></br>
+    <h4>Cities submitted by <%=@user.username%>:</h4>
+    <% @user.cities.each do |city| %>
+      <p><%= city.name %></p>
+    <% end %>
   </body>
 </html>
