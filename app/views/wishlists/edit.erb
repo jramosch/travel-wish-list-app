@@ -5,6 +5,18 @@
     <title>Update Your Wishlist</title>
   </head>
   <body>
-
+    <h1>Update Your Wishlist:</h1>
+    <form class="" action="index.html" method="post">
+      <label>Wishlist Name:</label><br>
+      <input type="text" name="wishlist[name]" value="<%= @wishlist.name %>">
+      <br></br>
+      <% Attractions.all.each do |attraction| %>
+        <input type="checkbox" name="wishlist[attraction_ids]"
+        value="<%=attraction.id%>" <%='checked' if @wishlist.attractions.include?(attraction)%>>
+        <%=attraction.name%></input>
+      <% end %>
+      <br></br>
+      <label></label>
+    </form>
   </body>
 </html>
