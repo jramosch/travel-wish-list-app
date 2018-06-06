@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    binding.pry
     if logged_in
       redirect to "/home"
     else

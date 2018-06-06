@@ -1,4 +1,4 @@
-kratos = User.create(username: "papakratos", email: "ghostofspart@gow.com", password: "quietboy")
+kratos = User.create(username: "papakratos", email: "ghostofsparta@gow.com", password: "quietboy")
 atreus = User.create(username: "imragnarok", email: "atreusorloki@gow.com", password: "godgiant")
 freya = User.create(username: "valkyriequeen", email: "freya@midgard.com", password: "killkratos")
 
@@ -26,7 +26,7 @@ attractions_by_kratos = [colosseum, parthenon, acropolis]
 
 attractions_by_kratos.each do |attraction|
   kratos.attractions << attraction
-  kraos.wishlist << attraction
+  kratos.wishlist.attractions << attraction
 end
 
 london = City.create(name: "London")
@@ -47,5 +47,5 @@ attractions_by_atreus = [london_eye, louvre]
 
 attractions_by_atreus.each do |attraction|
   atreus.attractions << attraction
-  atreus.wishlist << attraction
+  atreus.wishlist.attractions << attraction
 end
