@@ -12,6 +12,10 @@
     <br>
     <% if @current_user == @attraction.user %>
     <a href="/attractions/<%=@attraction.id%>/edit">Edit Attraction</a>
+    <form action="/attractions/<%=@attraction.id%>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Attraction">
+    </form>
     <% end %>
   </body>
 </html>

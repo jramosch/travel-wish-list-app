@@ -17,4 +17,10 @@ class AttractionsController < ApplicationController
     erb :'attractions/edit'
   end
 
+  delete '/attractions/:id/delete' do
+    attraction = Attraction.find(params[:id])
+    attraction.delete
+    redirect to "/home"
+  end
+
 end
