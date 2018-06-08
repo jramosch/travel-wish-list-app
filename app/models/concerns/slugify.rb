@@ -1,11 +1,5 @@
 module Slugify
 
-  module UserInstanceMethods
-    def slug
-      self.username.downcase.strip.gsub(' ','-').gsub(/[^\w-]/,'')
-    end
-  end
-
   module InstanceMethods
     def slug
       self.name.downcase.strip.gsub(' ','-').gsub(/[^\w-]/,'')

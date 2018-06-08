@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
+  include Slugify::InstanceMethods
   extend Slugify::ClassMethods
-  include Slugify::UserInstanceMethods
 
   has_secure_password
   has_one :wishlist
