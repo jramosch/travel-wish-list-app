@@ -6,7 +6,7 @@
   </head>
   <body>
     <h2>Edit You Attraction:</h2>
-    <form action="/attractions" method="post">
+    <form action="/attractions/<%=@attration.id%>" method="post">
       <input type="text" name="name" value="<%=@attraction.name%>"><br>
       <label>Change City:</label><br>
       <% City.all.each do |city| %>
