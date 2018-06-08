@@ -7,7 +7,7 @@
   <body>
     <h2><%= @wishlist.name %></h2>
     <% @wishlist.attractions.each do |attraction| %>
-      <h4><%= attraction.name %></h4>
+      <h4><a href="/attractions/<%=attraction.id%>"><%= attraction.name %></a></h4>
       <p>City: <%=attraction.city.name %><br>
       <%=attraction.description%></p>
     <% end %>
