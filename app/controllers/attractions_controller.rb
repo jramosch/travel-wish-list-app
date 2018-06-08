@@ -7,7 +7,9 @@ class AttractionsController < ApplicationController
   end
 
   post '/attractions/:id' do
-
+    attraction = Attraction.find(params[:id])
+    attraction.update(params["attraction"])
+    redirect to "/attractions/#{attraction.id}"
   end
 
   get '/attractions/:id/edit' do
