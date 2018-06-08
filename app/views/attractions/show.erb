@@ -10,6 +10,8 @@
     <p>City: <%=@attraction.city.name%><br>
     <%=@attraction.description%></p>
     <br>
+    <% if @current_user == @attraction.user %>
     <a href="/attractions/<%=@attraction.id%>/edit">Edit Attraction</a>
+    <% end %>
   </body>
 </html>
