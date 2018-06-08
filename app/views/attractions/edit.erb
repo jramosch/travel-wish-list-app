@@ -5,6 +5,19 @@
     <title>Edit <%=@attraction.name%></title>
   </head>
   <body>
-
+    <h2>Edit You Attraction:</h2>
+    <form action="/attractions" method="post">
+      <input type="text" name="name" value="<%=@attraction.name%>"><br>
+      <label>Change City:</label><br>
+      <% City.all.each do |city| %>
+        <input type="radio" name="city_id" value="<%=city.id%>"
+        <%='checked' if @attraction.city_id == city.id%>>
+        <%=city.name%></input>
+      <% end %>
+      <label>Edit Description:</label>
+      <input type="text" name="description" value="<%=@attraction.description%>">
+      <br></br>
+      <input type="submit" name="submit" value="Save Changes">
+    </form>
   </body>
 </html>
