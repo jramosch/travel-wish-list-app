@@ -6,8 +6,10 @@
   </head>
   <body>
     <h2><%=@attraction.name%></h2>
-    <p>Submitted by: <%=@attraction.user.username%></p>
-    <p>City: <%=@attraction.city.name%><br>
+    <p>Submitted by:  <a href="/users/<%= @attraction.user.slug %>">
+    <%=@attraction.user.username%></p></a>
+    <p>City: <a href="/cities/<%= @attraction.city.id %>">
+    <%=@attraction.city.name%><br>
     <%=@attraction.description%></p>
     <br>
     <% if @current_user == @attraction.user %>
