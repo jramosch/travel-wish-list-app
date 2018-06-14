@@ -5,6 +5,10 @@ class AttractionsController < ApplicationController
     erb :'attractions/index'
   end
 
+  get '/attractions/new' do
+    erb :'attractions/create'
+  end
+
   get '/attractions/:id' do
     @attraction = Attraction.find(params[:id])
     @current_user = current_user
