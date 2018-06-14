@@ -1,5 +1,9 @@
 class AttractionsController < ApplicationController
 
+  get '/attractions' do
+    erb :'attractions/index'
+  end
+
   get '/attractions/:id' do
     @attraction = Attraction.find(params[:id])
     @current_user = current_user
