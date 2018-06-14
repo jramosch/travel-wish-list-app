@@ -6,5 +6,8 @@
   </head>
   <body>
     <h2>Attractions Index</h2>
+    <% @attractions.each do |attraction| %>
+    <a href="/attractions/<%=attraction.id%>"><%=attraction.name%></a>
+    <% end %>
   </body>
 </html>
