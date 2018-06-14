@@ -8,7 +8,14 @@
     <h2>Create a new attraction!</h2>
     <form action="/attractions" method="post">
       <label>Name:</label>
-      <label>City:</label>
+      <input type="text" name="name"><br>
+      <label>Choose a City:</label>
+      <% City.all.each do |city| %>
+        <input type="radio" name="attraction[city_id]" value="<%= city.id %>">
+        <%= city.name %></input>
+      <% end %><br>
+      <label>Or create a new one:</label>
+      <input type="text" name="city[name]"><br>
       <label>Description:</label>
     </form>
   </body>
