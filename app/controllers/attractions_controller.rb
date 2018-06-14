@@ -1,6 +1,7 @@
 class AttractionsController < ApplicationController
 
   get '/attractions' do
+    @attractions = Attraction.all
     erb :'attractions/index'
   end
 
