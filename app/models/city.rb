@@ -1,7 +1,7 @@
 require_relative 'concerns/slugify'
 
 class City < ActiveRecord::Base
-  include Slugify::InstanceMethods
+  include Slugify::NameMethods
   extend Slugify::ClassMethods
 
   belongs_to :user
