@@ -5,11 +5,10 @@
     <title><%=@city.name%></title>
   </head>
   <body>
-    <h2><%=@city.name%></h2>
+    <h2>City: <%=@city.name%></h2>
     <p>Submitted by: <a href="/users/<%=@city.user.slug%>"><%=@city.user.username%></a></p>
-    <br></br>
     <h3>Attractions:</h3>
-    <% @city.attrations.each do |attraction| %>
+    <% @city.attractions.each do |attraction| %>
       <a href="/attractions/<%=attraction.slug%>"><%=attraction.name%></a><br>
     <% end %>
   </body>
