@@ -8,13 +8,13 @@
     <h2><%=@attraction.name%></h2>
     <p>Submitted by:  <a href="/users/<%= @attraction.user.slug %>">
     <%=@attraction.user.username%></p></a>
-    <p>City: <a href="/cities/<%= @attraction.city.id %>">
+    <p>City: <a href="/cities/<%= @attraction.city.slug %>">
     <%=@attraction.city.name%></a><br>
     <%=@attraction.description%></p>
     <br>
     <% if @current_user == @attraction.user %>
-    <a href="/attractions/<%=@attraction.id%>/edit">Edit Attraction</a>
-    <form action="/attractions/<%=@attraction.id%>/delete" method="post">
+    <a href="/attractions/<%=@attraction.slug%>/edit">Edit Attraction</a>
+    <form action="/attractions/<%=@attraction.slug%>/delete" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Delete Attraction">
     </form>
