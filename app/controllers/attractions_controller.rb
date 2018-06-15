@@ -13,7 +13,7 @@ class AttractionsController < ApplicationController
     attraction = Attraction.create(params["attraction"])
     attraction.update(user_id: current_user.id)
     if !params["city"]["name"].empty?
-      new_city = City.create(name: params["city"]["name"], user_id: current_user.id})
+      new_city = City.create(name: params["city"]["name"], user_id: current_user.id)
       attraction.update(city_id: new_city.id)
     end
     redirect to "/attractions/#{attraction.id}"
