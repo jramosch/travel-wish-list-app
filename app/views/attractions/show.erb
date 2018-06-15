@@ -12,7 +12,7 @@
     <%=@attraction.city.name%></a><br>
     <%=@attraction.description%></p>
     <br>
-    <% if @current_user == @attraction.user %>
+    <% if current_user == @attraction.user %>
     <a href="/attractions/<%=@attraction.slug%>/edit">Edit Attraction</a>
     <form action="/attractions/<%=@attraction.slug%>/delete" method="post">
       <input type="hidden" name="_method" value="delete">
