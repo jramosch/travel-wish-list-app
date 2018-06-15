@@ -1,4 +1,6 @@
 class ApplicationController < Sinatra::Base
+  use Rack::Flash
+
   register Sinatra::ActiveRecordExtension
 
   configure do
@@ -8,7 +10,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    binding.pry
     if logged_in
       redirect to "/home"
     else
@@ -41,8 +42,10 @@ class ApplicationController < Sinatra::Base
       user.wishlist = new_wishlist
       new_wishlist[:user_id] = user.id
       session[:user_id] = user.id
+      flash[:message] = "User created."
       redirect to "/users/#{user.slug}"
     else
+      flash[:message] = "Error: please make sure to fill in all fields."
       redirect to "/signup"
     end
   end
@@ -59,14 +62,18 @@ class ApplicationController < Sinatra::Base
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      flash[:message] = "Login successful!"
       redirect to "/home"
     else
+      flash[:message] = "Login failed. Please try again."
       redirect to "/login"
     end
   end
 
   get '/logout' do
     session.clear
+    flash[:message] = "Logged out successfully."
+    redirect to "/"
   end
 
   helpers do
