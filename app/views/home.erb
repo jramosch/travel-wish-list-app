@@ -16,12 +16,12 @@
     <br></br>
     <h4>Attractions submitted by you:</h4>
     <% @user.attractions.each do |attraction| %>
-      <p><%= attraction.name%></p>
+      <p><a href="/attractions/<%=attraction.slug%>"><%= attraction.name%></a></p>
     <% end %>
     <br></br>
     <h4>Cities submitted by you:</h4>
     <% @user.cities.each do |city| %>
-      <p><%= city.name %></p>
+      <p><a href="/cities/<%=city.slug%>"><%= city.name %></a></p>
     <% end %>
   </body>
 </html>
