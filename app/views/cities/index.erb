@@ -6,5 +6,8 @@
   </head>
   <body>
     <h2>Cities Index</h2>
+    <% @cities.each do |city| %>
+      <a href="/cities/<%=city.slug%>"><%=city.name%></a><br>
+    <% end %>
   </body>
 </html>
