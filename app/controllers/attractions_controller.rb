@@ -21,7 +21,9 @@ class AttractionsController < ApplicationController
 
   get '/attractions/:slug' do
     @attraction = Attraction.find_by_slug(params[:slug])
-    @current_user = current_user
+    if logged_in
+      @current_user = current_user
+    end
     erb :'attractions/show'
   end
 
