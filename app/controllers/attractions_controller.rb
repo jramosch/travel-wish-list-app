@@ -16,28 +16,28 @@ class AttractionsController < ApplicationController
       new_city = City.create(name: params["city"]["name"], user_id: current_user.id)
       attraction.update(city_id: new_city.id)
     end
-    redirect to "/attractions/#{attraction.id}"
+    redirect to "/attractions/#{attraction.slug}"
   end
 
-  get '/attractions/:id' do
-    @attraction = Attraction.find(params[:id])
+  get '/attractions/:slug' do
+    @attraction = Attraction.find_by_slug(params[:slug])
     @current_user = current_user
     erb :'attractions/show'
   end
 
-  post '/attractions/:id' do
-    attraction = Attraction.find(params[:id])
+  post '/attractions/:slug' do
+    attraction = Attraction.find_by_slug(params[:slug])
     attraction.update(params["attraction"])
-    redirect to "/attractions/#{attraction.id}"
+    redirect to "/attractions/#{attraction.slug}"
   end
 
-  get '/attractions/:id/edit' do
-    @attraction = Attraction.find(params[:id])
+  get '/attractions/:slug/edit' do
+    @attraction = Attraction.find_by_slug(params[:slug])
     erb :'attractions/edit'
   end
 
-  delete '/attractions/:id/delete' do
-    attraction = Attraction.find(params[:id])
+  delete '/attractions/:slug/delete' do
+    attraction = Attraction.find_by_slug(params[:slug])
     attraction.delete
     redirect to "/home"
   end
