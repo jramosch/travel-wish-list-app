@@ -43,7 +43,7 @@ class ApplicationController < Sinatra::Base
       new_wishlist[:user_id] = user.id
       session[:user_id] = user.id
       flash[:message] = "User created."
-      redirect to "/users/#{user.slug}"
+      redirect to "/home"
     else
       flash[:message] = "Error: please make sure to fill in all fields."
       redirect to "/signup"
