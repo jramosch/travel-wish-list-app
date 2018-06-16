@@ -8,5 +8,6 @@
     <h1>Users Index</h1>
     <% @users.each do |user| %>
     <a href="/users/<%= user.slug %>"><%= user.username %></a><br>
+    <% end %>
   </body>
 </html>
