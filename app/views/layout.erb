@@ -5,6 +5,9 @@
     <title>Travel Wishlist</title>
   </head>
   <body>
+    <% if flash.has?(:message) %>
+      <%=flash[:message]%>
+    <% end %> <br>
     <div class="container">
       <h1>Sinatra Travel Wishlists!</h1>
       <a href="/">Home</a>
