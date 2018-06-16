@@ -6,7 +6,6 @@ class WishlistsController < ApplicationController
 
   get '/wishlists/:id' do
     @wishlist = Wishlist.find(params[:id])
-    binding.pry
     erb :'wishlists/show'
   end
 
@@ -22,7 +21,6 @@ class WishlistsController < ApplicationController
   post '/wishlists/:id' do
     wishlist = Wishlist.find(params[:id])
     wishlist.update(params["wishlist"])
-    binding.pry
     if !params["attraction"]["name"].empty?
       new_attraction = Attraction.create(name: params["attraction"]["name"], description: params["attraction"]["description"], user_id: "#{current_user.id}")
       if !params["city"]["name"].empty?
@@ -33,6 +31,7 @@ class WishlistsController < ApplicationController
       end
       wishlist.attractions << new_attraction
     end
+    flash[:message] = "wishlist updated"
     redirect to "/home"
   end
 
