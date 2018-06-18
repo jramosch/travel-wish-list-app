@@ -35,4 +35,12 @@ class WishlistsController < ApplicationController
     redirect to "/home"
   end
 
+  get '/wishlists/:id/clear' do
+    wishlist = Wishlist.find(params[:id])
+    if current_user == wishlist.user
+      current_user.wishlist.attractions.clear
+      redirect to "/home"
+    end
+  end
+
 end
