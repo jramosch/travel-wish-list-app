@@ -1,5 +1,3 @@
-require 'rack-flash'
-
 class WishlistsController < ApplicationController
   use Rack::Flash
 
