@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class WishlistsController < ApplicationController
+  use Rack::Flash
 
   get '/wishlists' do
     erb :'wishlists/index'
@@ -39,6 +42,7 @@ class WishlistsController < ApplicationController
     wishlist = Wishlist.find(params[:id])
     if current_user == wishlist.user
       current_user.wishlist.attractions.clear
+      flash[:message] = "Successfully cleared wishlist."
       redirect to "/home"
     end
   end
