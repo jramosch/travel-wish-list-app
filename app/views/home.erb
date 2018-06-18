@@ -13,6 +13,7 @@
     <br>
     <a href="/wishlists/<%= @user.wishlist.id %>">View Wishlist</a>
     <a href="/wishlists/<%= @user.wishlist.id %>/edit">Update Wishlist</a>
+    <a href="/wishlists/<%= @user.wishlist.id %>/clear">Clear Wishlist</a>
     <br></br>
     <h4>Attractions submitted by you:</h4>
     <% @user.attractions.each do |attraction| %>
