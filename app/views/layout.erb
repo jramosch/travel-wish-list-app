@@ -11,14 +11,18 @@
     <div class="container">
       <h1>Sinatra Travel Wishlists!</h1>
       <a href="/">Home</a>
-      <a href="/logout">Log Out</a>
       <a href="/users">Users</a>
       <a href="/wishlists">Wishlists</a>
       <a href="/cities">Cities</a>
       <a href="/attractions">Attractions</a>
       <a href="/wishlists"></a>
       <a href="/attractions/new">Add Attraction</a>
-
+      <% if logged_in %>
+        <a href="/logout">Log Out</a>
+      <% else %>
+        <a href="/signup">Sign Up</a>
+      <% end %>
+      
       <%= yield %>
     </div>
   </body>
