@@ -5,10 +5,15 @@
     <title><%=@city.name%></title>
   </head>
   <body>
-    <h2>City: <form action="/cities/<%=@city.slug%>" method="post">
-      <input type="text" name="name" value="<%=@city.name%>">
-      <input type="submit" value="edit name">
-    </form></h2>
+    <% if current_user == @city.user %>
+      <h2>City: </h2>
+      <form action="/cities/<%=@city.slug%>" method="post">
+        <input type="text" name="name" value="<%=@city.name%>">
+        <input type="submit" value="edit name">
+      </form>
+    <% else %>
+      <h2>City: <%=@city.name %></h2>
+    <% end %>
     <p>Submitted by: <a href="/users/<%=@city.user.slug%>"><%=@city.user.username%></a></p>
     <h3>Attractions:</h3>
     <% @city.attractions.each do |attraction| %>
