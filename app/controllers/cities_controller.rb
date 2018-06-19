@@ -9,4 +9,10 @@ class CitiesController < ApplicationController
     @city = City.find_by_slug(params[:slug])
     erb :'cities/show'
   end
+
+  post '/cities/:slug' do
+    city = City.find_by_slug(params[:slug])
+    city.update(name: params["name"])
+    redirect to "/cities/#{city.slug}"
+  end
 end
