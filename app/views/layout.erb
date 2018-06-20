@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Travel Wishlist</title>
   </head>
   <body>
     <% if flash.has?(:message) %>
@@ -22,7 +21,7 @@
       <% else %>
         <a href="/signup">Sign Up</a>
       <% end %>
-      
+
       <%= yield %>
     </div>
   </body>
