@@ -34,7 +34,12 @@ class AttractionsController < ApplicationController
 
   get '/attractions/:slug/edit' do
     @attraction = Attraction.find_by_slug(params[:slug])
-    erb :'attractions/edit'
+    if logged_in && current_user == @attraction.user
+      erb :'attractions/edit'
+    else
+      flash[:message] = "Sorry, but you don't have access to edit this attraction."
+      redirect to "/attractions/#{@attraction.slug}"
+    end
   end
 
   delete '/attractions/:slug/delete' do
