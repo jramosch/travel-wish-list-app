@@ -6,6 +6,10 @@
   </head>
   <body>
     <h2><%= @wishlist.name %></h2>
+    <% if @wishlist.user != current_user %>
+      <p>Submitted by: <a href="/users/<%=@wishlist.user.slug%>">
+        <%=@wishlist.user.username%></p></a>
+    <% end %>
     <% @wishlist.attractions.each do |attraction| %>
       <p><b><a href="/attractions/<%=attraction.slug%>"><%= attraction.name %></a></b>
         <br>
