@@ -43,9 +43,9 @@ cities_by_atreus.each do |city|
 end
 
 london_eye = Attraction.create(name: "London Eye",
-  description: "Huge observation wheel giving passengers a privileged bird's-eye view of the city's landmarks.")
+  description: "The London Eye, known for sponsorship reasons as the Coca-Cola London Eye, is a giant Ferris wheel on the South Bank of the River Thames in London. The structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft). When it opened to the public in 2000 it was the world's tallest Ferris wheel.")
 louvre = Attraction.create(name: "The Louvre",
-  description: "he Louvre Palace is a former royal palace located on the Right Bank of the Seine in Paris, between the Tuileries Gardens and the church of Saint-Germain l'Auxerrois.")
+  description: "The Louvre or the Louvre Museum is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement (district or ward). Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square metres (782,910 square feet). In 2017, the Louvre was the world's most visited art museum, receiving 8.1 million visitors.")
 
 london.attractions << london_eye
 paris.attractions << louvre
