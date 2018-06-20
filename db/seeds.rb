@@ -16,11 +16,11 @@ cities_by_kratos.each do |city|
 end
 
 colosseum = Attraction.create(name: "The Colosseum",
-  description: "Monumental 3-tiered Roman amphitheater once used for gladiatorial games, with guided tour option.")
+  description: "The Colosseum or Coliseum, also known as the Flavian Amphitheatre, is an oval amphitheatre in the centre of the city of Rome, Italy. Built of travertine, tuff, and brick-faced concrete, it is the largest amphitheatre ever built. The Colosseum is situated just east of the Roman Forum.")
 parthenon = Attraction.create(name: "Parthenon",
-  description: "Restored, landmark temple ruins on archaeological site with iconic Doric columns built from 447 BC.")
+  description: "The Parthenon is a former temple, on the Athenian Acropolis, Greece, dedicated to the goddess Athena, whom the people of Athens considered their patron.")
 acropolis = Attraction.create(name: "Acropolis of Athens",
-  description: "Ruins of iconic 5th-century B.C. temple complex on Athens' rocky hilltop undergoing restoration.")
+  description: "The Acropolis of Athens is an ancient citadel located on a rocky outcrop above the city of Athens and contains the remains of several ancient buildings of great architectural and historic significance, the most famous being the Parthenon. The significance of the Acropolis of Athens is such that it is commonly known as "The Acropolis" without qualification. During ancient times it was known also more properly as Cecropia, after the legendary serpent-man, Cecrops, the first Athenian king.")
 
 rome.attractions << colosseum
 athens.attractions << parthenon
