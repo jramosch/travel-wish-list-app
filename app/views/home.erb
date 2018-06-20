@@ -5,7 +5,7 @@
     <title>Welcome <%= @user.username %></title>
   </head>
   <body>
-    <h1>Welcome <%= @user.username %></h1>
+    <h1>Welcome, <%= @user.username %>!</h1>
     <h3>Your Wishlist:</h3>
     <% @user.wishlist.attractions.each do |attraction| %>
       <p><%= attraction.name %></p>
@@ -19,7 +19,6 @@
     <% @user.attractions.each do |attraction| %>
       <p><a href="/attractions/<%=attraction.slug%>"><%= attraction.name%></a></p>
     <% end %>
-    <br></br>
     <h4>Cities submitted by you:</h4>
     <% @user.cities.each do |city| %>
       <p><a href="/cities/<%=city.slug%>"><%= city.name %></a></p>
