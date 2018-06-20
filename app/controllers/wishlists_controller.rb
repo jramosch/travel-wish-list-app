@@ -15,6 +15,7 @@ class WishlistsController < ApplicationController
     if logged_in && current_user.id == @wishlist.user_id
       erb :'wishlists/edit'
     else
+      flash[:message] = "sorry, you don't have access."
       redirect to "/wishlists"
     end
   end
@@ -40,7 +41,7 @@ class WishlistsController < ApplicationController
     wishlist = Wishlist.find(params[:id])
     if current_user == wishlist.user
       current_user.wishlist.attractions.clear
-      flash[:message] = "Successfully cleared wishlist."
+      flash[:message] = "wishlist cleared"
       redirect to "/home"
     end
   end
