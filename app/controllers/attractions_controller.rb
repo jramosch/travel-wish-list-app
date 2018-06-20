@@ -16,6 +16,7 @@ class AttractionsController < ApplicationController
       new_city = City.create(name: params["city"]["name"], user_id: current_user.id)
       attraction.update(city_id: new_city.id)
     end
+    current_user.wishlist.attractions << attraction if params["add_to_wishlist"] == "yes"
     flash[:message] = "attraction created"
     redirect to "/attractions/#{attraction.slug}"
   end
