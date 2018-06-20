@@ -5,15 +5,17 @@
     <title>Edit <%=@attraction.name%></title>
   </head>
   <body>
-    <h2>Edit You Attraction:</h2>
+    <h2>Edit Your Attraction:</h2>
     <form action="/attractions/<%=@attraction.id%>" method="post">
-      <input type="text" name="attraction[name]" value="<%=@attraction.name%>"><br>
+      <input type="text" name="attraction[name]" value="<%=@attraction.name%>">
+      <br></br>
       <label>Change City:</label><br>
       <% City.all.each do |city| %>
         <input type="radio" name="attraction[city_id]" value="<%=city.id%>"
         <%='checked' if @attraction.city_id == city.id%>>
         <%=city.name%></input>
       <% end %>
+      <br></br>
       <label>Edit Description:</label>
       <input type="text" name="attraction[description]" value="<%=@attraction.description%>">
       <br></br>
