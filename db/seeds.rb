@@ -20,7 +20,7 @@ colosseum = Attraction.create(name: "The Colosseum",
 parthenon = Attraction.create(name: "Parthenon",
   description: "The Parthenon is a former temple, on the Athenian Acropolis, Greece, dedicated to the goddess Athena, whom the people of Athens considered their patron.")
 acropolis = Attraction.create(name: "Acropolis of Athens",
-  description: "The Acropolis of Athens is an ancient citadel located on a rocky outcrop above the city of Athens and contains the remains of several ancient buildings of great architectural and historic significance, the most famous being the Parthenon. The significance of the Acropolis of Athens is such that it is commonly known as "The Acropolis" without qualification. During ancient times it was known also more properly as Cecropia, after the legendary serpent-man, Cecrops, the first Athenian king.")
+  description: "The Acropolis of Athens is an ancient citadel located on a rocky outcrop above the city of Athens and contains the remains of several ancient buildings of great architectural and historic significance, the most famous being the Parthenon. The significance of the Acropolis of Athens is such that it is commonly known as 'The Acropolis' without qualification. During ancient times it was known also more properly as Cecropia, after the legendary serpent-man, Cecrops, the first Athenian king.")
 
 rome.attractions << colosseum
 athens.attractions << parthenon
