@@ -18,3 +18,11 @@ To use the application:
 ## Contributing
 
 Pull requests welcome on GitHub at https://github.com/jramosch/travel-wishlist-sinatra-app. All collaborations are welcome, as long as contributors adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
+
+## License
+
+This project is licensed under the MIT License. See LICENSE file for further details.
+
+## Author
+
+Jamilya Ramos-Chapman, 2018.
